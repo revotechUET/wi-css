@@ -1,0 +1,33 @@
+{
+  "name": "wi-css",
+  "version": "1.0.0",
+  "main": "./dist/wi-css.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -w --config webpack.local.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revotechUET/wi-css.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/revotechUET/wi-css/issues"
+  },
+  "homepage": "https://github.com/revotechUET/wi-css#readme",
+  "devDependencies": {
+    "css-loader": "^2.1.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.0",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "html-loader": "^0.5.5",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0"
+  },
+  "dependencies": {
+    "webpack-cli": "^3.3.5"
+  }
+}
