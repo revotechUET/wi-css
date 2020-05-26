@@ -5,14 +5,14 @@ input:hover[type='checkbox'],input:hover[type='radio'] {
 input:focus[type='checkbox'],input:focus[type='radio'] {
     outline: none;
 }
-input:hover[type='text'],input:hover[type='checkbox'],input:hover[type='radio'], input:hover[type='search'], input:hover[type='password'], input:hover[type='email'], input:hover[type='url'], input:hover[type='tel'], .selectize-input:hover, textarea:hover, .ql-container .ql-editor:hover, select:hover, .input-with-prefix:hover {
-    background-color: var(--input-bg-hover);
-    border-color: var(--input-border-hover);
-    -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover);
-    box-shadow: 0 0 0 4px var(--input-shadow-hover);
+input:hover[type='text'], input:hover[type='search'], input:hover[type='password'], input:hover[type='email'], input:hover[type='url'], input:hover[type='tel'], .selectize-input:hover, textarea:hover, .ql-container .ql-editor:hover, select:hover, .input-with-prefix:hover {
+    background-color: var(--input-bg-hover) !important;
+    border-color: var(--input-border-hover) !important;
+    -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
+    box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
 }
 input[type='text'], input[type='search'], input[type='password'], input[type='email'], input[type='url'], input[type='tel'], .selectize-input {
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
 }
 input:active[type='text'],input:hover[type='checkbox'],input:hover[type='radio'], input:active[type='search'], input:active[type='password'], input:active[type='email'], input:active[type='url'], input:active[type='tel'], .selectize-input:active, textarea:active, .ql-container .ql-editor:active, select:active, .input-with-prefix:active {
     background-color: var(--input-bg-hover);
@@ -22,9 +22,12 @@ input:active[type='text'],input:hover[type='checkbox'],input:hover[type='radio']
 }
 input:focus[type='text'], input:hover[type='checkbox'],input:hover[type='radio'],input:focus[type='search'], input:focus[type='password'], input:focus[type='email'], input:focus[type='url'], input:focus[type='tel'], .selectize-input:focus, textarea:focus, .ql-container .ql-editor:focus, select:focus, .input-with-prefix:focus {
     background-color: var(--input-bg-hover);
-    border-color: var(--input-border-focus);
-    -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover);
-    box-shadow: 0 0 0 4px var(--input-shadow-hover);
+    border-color: var(--input-border-focus) !important;
+    -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
+    box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
+}
+input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus {
+    outline: none !important;
 }
 input[type='text'], input[type='search'], input[type='password'], input[type='email'], input[type='url'], input[type='tel'], .selectize-input, textarea, .ql-container .ql-editor, select, .input-with-prefix {
     font-weight: 400;
@@ -32,8 +35,9 @@ input[type='text'], input[type='search'], input[type='password'], input[type='em
     width: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    height: 40px;
-    padding: 10px 16px;
+    max-height: 40px;
+    min-height: 40px;
+    padding: 11px 16px;
     outline: none;
     border-radius: 8px;
     -webkit-transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
@@ -44,13 +48,27 @@ input[type='text'], input[type='search'], input[type='password'], input[type='em
     -moz-appearance: none;
     appearance: none;
     color: var(--text-primary-color);
-    background-color: var(--input-bg);
+    background-color: var(--input-bg) !important;
 }
 input:hover[type='submit'] {
     background-color: var(--primary-dark-color);
     border-color: var(--input-border-focus);
     -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover);
     box-shadow: 0 0 0 4px var(--input-shadow-hover);
+}
+input[type='submit'] {
+    width: 100% !important;
+    background-color: var(--primary-color);
+    height: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    border-radius: 10px;
+    color: var(--text-white-color);
+    user-select: none;
+    transition: all ease-in 0.1s;
 }
 
 input:checked[type='checkbox'], input:checked[type='radio'] {
@@ -66,7 +84,7 @@ input[type='checkbox'], input[type='radio'] {
     border-radius: 50%;
     padding: 0;
     position: relative;
-    margin: 0 12px 0 0;
+    margin: 0 12px 0 0 !important;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -120,8 +138,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    border: 1px solid var(--input-border-focus);
-    -webkit-text-fill-color: var(--text-primary-color);
-    -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset;
-    transition: background-color 5000s ease-in-out 0.2s;
+    border: 1px solid var(--input-border-focus) !important;
+    -webkit-text-fill-color: var(--text-primary-color) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset !important;
+    transition: background-color 5000s ease-in-out 0.2s !important;
 }

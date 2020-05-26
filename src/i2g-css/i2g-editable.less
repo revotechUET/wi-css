@@ -1,0 +1,92 @@
+.i2g-editable {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  width          : 100%;
+
+  .i2g-editable-title {
+    display        : flex;
+    justify-content: space-between;
+    color          : var(--text-primary-color);
+    font-weight    : 500 !important;
+    white-space    : normal;
+    width          : 50%;
+    overflow       : hidden;
+  }
+
+  .i2g-editable-content {
+    width: 50%;
+    ;
+  }
+
+  .i2g-editable-text-display {
+    &>span {
+      overflow     : hidden;
+      text-overflow: ellipsis;
+      white-space  : nowrap;
+    }
+
+    overflow          : hidden;
+    font-weight       : 400;
+    width             : 100%;
+    display           : flex;
+    align-items       : center;
+    -webkit-box-sizing: border-box;
+    box-sizing        : border-box;
+    height            : 40px;
+    padding           : 10px 16px;
+    outline           : none;
+    border-radius     : 8px;
+    -webkit-transition: background-color 200ms ease,
+    outline 200ms ease,
+    color 200ms ease,
+    -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease,
+    outline 200ms ease,
+    color 200ms ease,
+    -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease,
+    outline 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+    transition: background-color 200ms ease,
+    outline 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease,
+    -webkit-box-shadow 200ms ease;
+    -webkit-appearance: none;
+    -moz-appearance   : none;
+    appearance        : none;
+    color             : var(--text-primary-color);
+    background-color  : var(--input-bg);
+    border            : 1px solid transparent;
+  }
+
+  .i2g-editable-text-display:focus {
+    background-color  : var(--input-bg-hover);
+    border-color      : var(--input-border-focus) !important;
+    -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
+    box-shadow        : 0 0 0 4px var(--input-shadow-hover) !important;
+  }
+
+  .i2g-editable-text-display:hover {
+    background-color  : var(--input-bg-hover) !important;
+    border-color      : var(--input-border-hover) !important;
+    -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
+    box-shadow        : 0 0 0 4px var(--input-shadow-hover) !important;
+  }
+}
+editable div.my-content > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  max-height: 40px;
+  min-height: 40px;
+  padding: 11px 16px;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: var(--text-primary-color);
+  background-color: var(--input-bg);
+}

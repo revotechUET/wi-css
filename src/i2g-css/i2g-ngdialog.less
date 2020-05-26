@@ -4,15 +4,16 @@
   justify-content: center;
 
   .ngdialog-content {
-    position           : relative;
+    position              : relative;
     min-width          : 400px;
-    max-height         : 60vh;
-    height             : 100%;
-    overflow           : hidden;
-    padding            : 20px;
-    border-radius      : 10px;
-    animation          : zoom-dialog 0.5s;
-    animation-fill-mode: both;
+    max-height            : 60vh;
+    max-width             : 90vw;
+    height                : fit-content;
+    overflow              : hidden;
+    padding               : 20px;
+    border-radius         : 10px;
+    animation             : drop-menu-tab 0.5s;
+    animation-fill-mode   : both;
   }
 
   .ngdialog-overlay {
@@ -26,7 +27,7 @@
   padding            : 20px;
   border-radius      : 10px;
   border             : 1px solid var(--body-bg-color);
-  animation          : zoom-dialog 0.5s;
+  animation          : drop-menu-tab 0.5s;
   animation-fill-mode: both;
 }
 
@@ -44,4 +45,36 @@
   left           : 0;
   z-index        : 10000;
   background     : rgba(32, 33, 36, 0.83);
+}
+
+.i2g-item-icon-title-detail {
+  display    : flex;
+  align-items: center;
+  background: var(--toolbar-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+
+  &>svg {
+    min-width : 40px;
+    min-height: 40px;
+    width     : 40px;
+    height    : 40px;
+    margin    : 0 20px 0 0;
+  }
+
+  .info-i2g-item-icon-title-detail {
+    flex: 1;
+
+    &>*:first-child {
+      font-weight  : bold;
+      color        : var(--text-primary-color);
+      margin-bottom: 5px;
+    }
+
+    &>*:last-child {
+      font-size: 10px;
+      opacity  : 0.5;
+    }
+  }
 }

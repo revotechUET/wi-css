@@ -1,20 +1,20 @@
 .space-20px {
-  width: 20px;
+  width    : 20px;
   min-width: 20px;
 }
 
 .space-10px {
-  width: 10px;
+  width    : 10px;
   min-width: 10px;
 }
 
 .space-height-20px {
-  height: 20px;
+  height    : 20px;
   min-height: 20px;
 }
 
 .space-height-10px {
-  height: 10px;
+  height    : 10px;
   min-height: 10px;
 }
 
@@ -226,7 +226,7 @@
   align-items: center;
   user-select: none;
   font-weight: normal;
-  cursor: pointer;
+  cursor     : pointer;
 }
 
 .i2g-tab {
@@ -275,21 +275,22 @@
       border-radius     : 10px;
       -webkit-box-shadow: var(--box-shadow);
       box-shadow        : var(--box-shadow);
-      
+
 
       .item-drop {
         user-select: none;
         height     : 40px;
         padding    : 0 20px;
         display    : flex;
+        white-space: nowrap;
         align-items: center;
         color      : var(--text-primary-color);
 
         &>svg {
           fill        : currentColor;
           margin-right: 15px;
-          width: 20px;
-          height: 20px;
+          width       : 20px;
+          height      : 20px;
         }
 
         &:hover {
@@ -363,21 +364,102 @@
   }
 }
 
+.i2g-tab-line-bottom {
+  display        : flex;
+  height         : 100%;
+  justify-content: flex-start !important;
+
+  .tab-item {
+    display    : flex;
+    align-items: center;
+    position   : relative;
+
+    &:hover {
+      cursor: pointer;
+
+      .tab-name {
+        color: var(--text-primary-color);
+      }
+
+      .active-tab-status {
+        opacity: 1;
+      }
+    }
+
+    .tab-name {
+      user-select  : none;
+      position     : relative;
+      color        : var(--text-inactive-color);
+      font-weight  : 500;
+      white-space  : nowrap;
+      height       : 40px;
+      padding      : 0 15px;
+      border-radius: 10px;
+      display      : flex;
+      transition   : all ease-in 0.1s;
+
+
+    }
+
+    .tab-name:active {
+      transition: all ease-in 0.1s;
+      transform : scale(0.96);
+    }
+
+    .active-tab-status {
+      position        : absolute;
+      height          : 4px;
+      width           : calc(100% - 30px);
+      max-width       : 50px;
+      bottom          : 0;
+      left            : 50%;
+      transform       : translateX(-50%);
+      opacity         : 0;
+      border-radius   : 10px;
+      background-color: var(--primary-color);
+    }
+
+
+  }
+
+  .active {
+    .tab-name {
+      color: var(--text-primary-color);
+    }
+
+    .active-tab-status {
+      opacity: 1;
+    }
+
+  }
+}
+
 .i2g-main-layout {
-  max-height: calc(100vh - 70px);
-  height    : 100%;
-  position  : relative;
-  display   : flex;
-  padding   : 20px;
+  max-height      : calc(100vh - 70px);
+  height          : 100%;
+  position        : relative;
+  display         : flex;
+  padding         : 20px;
+  background-color: var(--button-bg-color);
+
+  .hide-block {
+    flex      : 0 !important;
+    flex-basis: 0 !important;
+    padding   : 0 !important;
+    transition: all ease-in-out 0.2s;
+  }
 
   .block {
+    display: flex;
+    flex-direction: column;
     flex-basis      : 300px;
     background-color: var(--toolbar-bg-color);
     border-radius   : 10px;
     padding         : 20px;
     height          : 100%;
     position        : relative;
-    overflow: hidden;
+    overflow        : hidden;
+    transition      : all ease-in-out 0.2s;
   }
 
   .block-scroll {
@@ -413,21 +495,26 @@
 .i2g-table {
   overflow: auto;
   position: relative;
-  height  : calc(100% - 60px);
+  height  : 100%;
+  margin: 0 -10px;
+  padding: 0 10px;
 }
 
 .i2g-table-header {
   position        : sticky;
   top             : 0;
+  width: fit-content;
   z-index         : 1;
   display         : flex;
   align-items     : center;
   height          : 60px;
   min-height      : 60px;
+  font-weight: bold;
   background-color: var(--toolbar-bg-color);
 }
 
 .i2g-table-row {
+  width: fit-content;
   display         : flex;
   align-items     : center;
   height          : 60px;
@@ -449,9 +536,9 @@
   background-color          : var(--toolbar-bg-color);
   box-shadow                : var(--box-shadow-2);
   z-index                   : 1;
-  animation          : drop-menu-tab 0.2s;
-  animation-fill-mode: both;
-  transition         : all cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s;
+  animation                 : drop-menu-tab 0.2s;
+  animation-fill-mode       : both;
+  transition                : all cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s;
 }
 
 .i2g-item-drop-shadow {
@@ -470,6 +557,7 @@
 .i2g-title-item-with-btn {
   display        : flex;
   justify-content: space-between;
+  align-items    : center;
   color          : var(--text-primary-color);
   font-weight    : 500;
   white-space    : nowrap;
@@ -574,14 +662,14 @@
 }
 
 .item-icon-title-discription {
-  display            : flex;
+  display               : flex;
   // width              : 300px;
-  margin-bottom      : 20px;
-  padding-bottom: 10px;
-  animation          : drop-notification 0.5s;
-  animation-fill-mode: both;
-  transition         : all cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s;
-  border-bottom: 2px solid var(--button-bg-color);
+  margin-bottom         : 20px;
+  padding-bottom        : 10px;
+  animation             : drop-notification 0.5s;
+  animation-fill-mode   : both;
+  transition            : all cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s;
+  border-bottom         : 2px solid var(--button-bg-color);
 
   &.noti>*:nth-child(1) {
     background-color: var(--toast-noti);
@@ -649,23 +737,71 @@
     }
 
     &>span {
-      opacity: 0.5;
-      font-size: 12px;
+      opacity      : 0.5;
+      font-size    : 12px;
       margin-bottom: 10px;
     }
   }
 }
+
 .i2g-box-hover-shadow {
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius   : 10px;
   background-color: var(--body-bg-color);
+  margin-bottom: 20px;
+  .i2g-title-with-icon {
+    padding: 20px;
+    border-bottom:1px solid #fff ;
+  }
+
   &:hover {
-    cursor: pointer;
+    cursor          : pointer;
     background-color: var(--primary-color);
-    box-shadow: var(--box-shadow);
-    transition: all ease-in-out 0.2s;
+    box-shadow      : var(--box-shadow);
+    transition      : all ease-in-out 0.2s;
+
     .i2g-title-with-icon {
       color: #fff;
     }
+    .i2g-discription-with-icon {
+      color: #fff;
+    }
   }
+}
+.i2g-discription-with-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  &> svg {
+    margin-right: 10px;
+    fill: currentColor;
+    margin: 0 20px 0 0;
+    padding: 0;
+  }
+  &> div {
+    
+    font-size: 12px;
+    opacity: 0.8;
+  }
+}
+
+.block-float {
+  display            : flex;
+  flex-direction     : column;
+  width              : 300px;
+  height             : calc(100vh - 110px);
+  overflow           : hidden;
+  position           : fixed;
+  background-color   : var(--toolbar-bg-color);
+  z-index            : 1;
+  padding            : 20px;
+  border-radius      : 10px;
+  right              : 20px;
+  top                : 70px;
+  box-shadow         : var(--box-shadow);
+  animation          : drop-menu-tab 0.5s;
+  animation-fill-mode: both;
+  z-index: 2;
 }
