@@ -1,0 +1,30 @@
+.wi-tree {
+    .items {
+        &>div {
+            // padding-left: 0 !important;
+        }
+    }
+    .node {
+        border-radius: 8px;
+        // height: 40px;
+        color: var(--text-primary-color) !important;
+    }
+    .node:hover,
+    .node.selected {
+        background: var(--button-bg-hover-color) !important;
+        font-weight: normal;
+        color: var(--primary-dark-color) !important;
+        .node-caret {
+        color: var(--primary-dark-color) !important;
+
+        }
+    }
+    .node-icon {
+        margin-right: 10px !important;
+        display: flex;
+        align-items: center;
+    }
+    .node-caret {
+        width: 20px !important;
+    }
+}
