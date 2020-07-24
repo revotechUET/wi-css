@@ -31,7 +31,6 @@ input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus {
 }
 input[type='text'], input[type='search'], input[type='password'], input[type='email'], input[type='url'], input[type='tel'], .selectize-input, .ql-container .ql-editor, select, .input-with-prefix {
     font-weight: 400;
-    // line-height: 24px;
     width: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -58,15 +57,16 @@ input:hover[type='submit'] {
 }
 input[type='submit'] {
     width: 100% !important;
+    min-width: 100px;
     background-color: var(--primary-color);
     height: 40px;
     min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 12px;
+    padding: 0 20px;
     border: transparent;
-    border-radius: 10px;
+    border-radius: 8px;
     color: var(--text-white-color);
     user-select: none;
     transition: all ease-in 0.1s;
@@ -137,8 +137,14 @@ input:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    border: 1px solid var(--input-border-focus) !important;
+    // border: 1px solid var(--input-border-focus) !important;
     -webkit-text-fill-color: var(--text-primary-color) !important;
     -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset !important;
     transition: background-color 5000s ease-in-out 0.2s !important;
 }
+.input-disable {
+    background-color: var(--button-bg-color) !important;
+    color           : var(--button-icon-color) !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+  }
