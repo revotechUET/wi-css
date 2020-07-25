@@ -7,6 +7,7 @@ import './i2g-reset-css.less';
 import './i2g-reset-ui-select.less';
 import './i2g-select.less';
 import './i2g-toast.less';
+import './i2g-toast-vue-reset.less';
 import './i2g-editable.less';
 import './i2g-darkmode.less';
 import './i2g-tree.less';

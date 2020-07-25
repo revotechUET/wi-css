@@ -1,0 +1,28 @@
+.toasted-container.top-center {
+    top: 40px;
+}
+.toasted.toasted-primary.error {
+    top: 0;
+    display            : flex;
+    align-items        : center;
+    font-size: 14px;
+    width              : 300px;
+    padding            : 20px;
+    border-radius      : 10px;
+    box-shadow         : 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    margin-top         : 16px;
+    color              : #fff;
+    animation          : drop-notification 0.5s;
+    animation-fill-mode: both;
+    transition         : all cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s;
+    background-color: var(--toast-error);
+}
+@media only screen and (max-width: 600px) {
+    .toasted-container.top-center {
+        top: 20px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        min-width: unset;
+    }
+}
