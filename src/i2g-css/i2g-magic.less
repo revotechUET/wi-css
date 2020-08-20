@@ -331,7 +331,7 @@
       display           : none;
       min-width         : 200px;
       padding           : 20px 0;
-      background        : var(--toolbar-bg-color);
+      background        : var(--dialog-bg-color);
       position          : absolute;
       top               : 100%;
       left              : 0;
@@ -793,7 +793,7 @@
     height          : 40px;
     margin-right    : 20px;
     border-radius   : 50%;
-    background-color: #000;
+    background-color: var(--black);
     opacity         : 0.9;
   }
 
@@ -839,7 +839,7 @@
 
   .i2g-title-with-icon {
     padding      : 20px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--white);
   }
 
   &:hover {
@@ -849,11 +849,11 @@
     transition      : all ease-in-out 0.2s;
 
     .i2g-title-with-icon {
-      color: #fff;
+      color: var(--white);
     }
 
     .i2g-discription-with-icon {
-      color: #fff;
+      color: var(--white);
     }
   }
 }
@@ -891,12 +891,13 @@
   max-height             : calc(100vh - 200px);
   overflow           : hidden;
   position           : fixed;
-  background-color   : var(--toolbar-bg-color);
+  background-color   : var(--dialog-bg-color);
   padding            : 20px;
   border-radius      : 10px;
   right              : 20px;
   top                : 70px;
   box-shadow         : var(--box-shadow);
+  color: var(--black);
   animation          : drop-menu-tab 0.5s;
   animation-fill-mode: both;
   z-index            : 2;
@@ -982,9 +983,9 @@
   right: 76px;
   display: inline-block;
   border-right: 13px solid transparent;
-  border-bottom: 13px solid #f0f0f1;
+  border-bottom: 13px solid var(--button-bg-color);
   border-left: 13px solid transparent;
-  border-bottom-color: rgb(239, 239, 240);
+  border-bottom-color: var(--button-bg-color);
   content: '';
 }
 .dropdown-caret::after {
@@ -993,7 +994,7 @@
   right: 79px;
   display: inline-block;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid white;
+  border-bottom: 10px solid var(--dialog-bg-color);
   border-left: 10px solid transparent;
   content: '';
 }

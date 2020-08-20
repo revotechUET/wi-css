@@ -56,6 +56,7 @@ input:hover[type='submit'] {
     box-shadow: 0 0 0 4px var(--input-shadow-hover);
 }
 input[type='submit'] {
+    font-weight: bold !important;
     width: 100% !important;
     min-width: 100px;
     background-color: var(--primary-color);
@@ -148,3 +149,64 @@ select:-webkit-autofill:focus {
     pointer-events: none !important;
     cursor: not-allowed !important;
   }
+input[type="submit"]:disabled {
+    background-color: var(--button-bg-color) !important;
+    color           : var(--button-icon-color) !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+}
+.i2g-input-upload-file {
+    display: flex;
+    font-weight: 400;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-height: 40px;
+    min-height: 40px;
+    padding: 11px 14px;
+    outline: none;
+    border-radius: 10px;
+    -webkit-transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: var(--text-primary-color);
+    background-color: var(--input-bg) !important;
+    &>label>span {
+        // color: var(--button-icon-color);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &>label>div {
+        width: 16px;
+        height: 18px;
+        margin-right: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16px' height='16px' viewBox='0 0 16 16' version='1.1'%3E%3C!-- Generator: Sketch 55 (78076) - https://sketchapp.com --%3E%3Ctitle%3E01 copy 47%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='01-copy-47' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M8,2 C8.55228475,2 9,2.44771525 9,3 L9,13 C9,13.5522847 8.55228475,14 8,14 C7.44771525,14 7,13.5522847 7,13 L7,3 C7,2.44771525 7.44771525,2 8,2 Z' id='Path' fill='%233F84FF' fill-rule='nonzero' transform='translate(8.000000, 8.000000) scale(-1, -1) rotate(270.000000) translate(-8.000000, -8.000000) '/%3E%3Cpath d='M8,2 C8.55228475,2 9,2.44771525 9,3 L9,13 C9,13.5522847 8.55228475,14 8,14 C7.44771525,14 7,13.5522847 7,13 L7,3 C7,2.44771525 7.44771525,2 8,2 Z' id='Path' fill='%233F84FF' fill-rule='nonzero' transform='translate(8.000000, 8.000000) scale(-1, -1) translate(-8.000000, -8.000000) '/%3E%3C/g%3E%3C/svg%3E");
+        filter: grayscale(1);
+    }
+    &>input {
+        display: none;
+    }
+    &>label {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    &:hover {
+        background-color: var(--input-bg-hover) !important;
+        border-color: var(--input-border-hover) !important;
+        -webkit-box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
+        box-shadow: 0 0 0 4px var(--input-shadow-hover) !important;
+        &>label>div {
+            filter: grayscale(0);
+            transition: all ease-in-out 0.2s;
+        }
+    }
+}
