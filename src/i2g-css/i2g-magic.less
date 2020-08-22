@@ -537,7 +537,22 @@
     }
   }
 }
+.i2g-title-large {
+  display        : flex;
+  align-items    : center;
+  height         : 40px;
+  justify-content: space-between;
 
+  &>span {
+    color      : var(--text-primary-color);
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+  }
+}
 .i2g-title-with-btn {
   display        : flex;
   align-items    : center;

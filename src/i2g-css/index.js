@@ -11,4 +11,5 @@ import './i2g-toast-vue-reset.less';
 import './i2g-editable.less';
 import './i2g-darkmode.less';
 import './i2g-tree.less';
+import './i2g-font-size.less';
 
