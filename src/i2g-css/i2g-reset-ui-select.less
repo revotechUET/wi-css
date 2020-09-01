@@ -90,11 +90,11 @@
   font-size              : 14px !important;
   text-align             : left !important;
   list-style             : none !important;
-  background-color       : var(--toolbar-bg-color) !important;
+  background-color       : var(--dialog-bg-color) !important;
   -webkit-background-clip: padding-box !important;
   background-clip        : padding-box !important;
   border                 : none  !important;
-  border-radius          : 8px !important;
+  border-radius          : 10px !important;
   box-shadow             : var(--box-shadow) !important;
 }
 
@@ -119,8 +119,11 @@
   line-height     : 1.42857143 !important;
   color           : var(--text-primary-color) !important;
   white-space     : nowrap !important;
+  &:hover {
+    background-color: var(--button-bg-color);
 }
 
+}
 .ui-select-choices-row-inner>div {
   width      : 100% !important;
   display    : flex !important;
