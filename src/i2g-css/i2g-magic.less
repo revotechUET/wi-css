@@ -656,6 +656,10 @@
   border-top      : 2px solid var(--button-bg-color);
   background-color: var(--toolbar-bg-color);
   color: var(--text-primary-color);
+  -webkit-transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
   &>*:nth-child(1) {
     position: sticky;
     z-index: 1;
@@ -663,20 +667,44 @@
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     background: var(--toolbar-bg-color);
     border-right: 2px solid var(--button-bg-color);
     margin-right: 20px;
+    -webkit-transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
   }
-  &>div {
-    // overflow: hidden;
-    // text-overflow: ellipsis;
-    // white-space: nowrap;
+  &>div>svg:hover {
+    color: var(--primary-color);
+    cursor: pointer;
   }
   .text-ellipsis{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     padding-right: 10px;
+  }
+  &:hover {
+    background-color: var(--input-bg);
+    -webkit-transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease;
+    transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+    &>*:nth-child(1) {
+      background-color: var(--input-bg);
+      -webkit-transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+      transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, -webkit-box-shadow 200ms ease;
+      transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease;
+      transition: background-color 200ms ease, outline 200ms ease, color 200ms ease, box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+    }
+    .ui-select-bootstrap > .ui-select-match > .btn {
+      background-color: var(--input-bg);
+    }
+  }
+  .ui-select-bootstrap > .ui-select-match > .btn {
+    background-color: var(--toolbar-bg-color);
   }
 }
 
@@ -800,6 +828,7 @@
 
   &>div>*:nth-child(1) {
     margin: 0 10px 0 0;
+    transition: all ease-in-out 0.2s;
   }
 
 }
@@ -1169,21 +1198,41 @@
     color     : var(--primary-color);
   }
 }
+.i2g-badge {
+    height: 25px;
+    padding: 0 10px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 5px;
+    font-size: 80%;
+    font-weight: bold;
+    color: var(--text-inactive-color);
+    transition: all ease-in-out 0.2s;
 
-.i2g-badge-medium {
-  background     : var(--toolbar-bg-color);
-  color          : var(--text-inactive-color);
-  display        : flex;
-  align-items    : center;
-  justify-content: center;
-  padding        : 5px 10px;
-  margin-left    : 10px;
-  border-radius  : 15px;
-
-  &.active {
+    &.active {
+      transition: all ease-in-out 0.2s;
+      color: var(--primary-color)
+    }
+    &:hover {
+      cursor: pointer;
+      transition: all ease-in-out 0.2s;
+      background-color: var(--button-bg-hover-color);
+      color: var(--button-icon-hover-color);
+    }
+}
+.i2g-badge-circle {
+    width: 25px;
+    height: 25px;
     background: var(--primary-color);
-    color     : var(--toolbar-bg-color);
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 70%;
+    color: var(--toolbar-bg-color) !important;
+  
 }
 
 .i2g-list-card {
@@ -1210,6 +1259,12 @@
     transition: all ease-in-out 0.2s;
 
     &:hover {
+      .ui-select-bootstrap > .ui-select-match > .btn {
+        background: var(--toolbar-bg-color);
+      }
+      .i2g-badge-circle {
+        background: var(--primary-color);
+      }
       cursor: pointer;
       border: 1px solid var(--primary-color);
       background: var(--input-shadow-hover);
@@ -1258,5 +1313,71 @@
       margin: -10px;
       opacity: 0;
     }
+  }
+}
+.i2g-list-card-v2 {
+  // height               : 100%;
+  overflow             : hidden;
+  margin               : -5px -10px;
+  display              : grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  &:hover {
+    overflow: overlay;
+  }
+  .item {
+    height        : fit-content;
+    width         : calc(100% - 20px);
+    color: var(--text-inactive-color);
+    display       : flex;
+    flex-direction: column;
+    border-radius : 10px;
+    margin        : 5px 10px 15px 10px;
+    border: 1px solid transparent;
+
+    transition: all ease-in-out 0.2s;
+    .ui-select-bootstrap > .ui-select-match > .btn {
+      background: var(--toolbar-bg-color);
+    }
+    .i2g-badge-circle {
+      margin-right: 10px;
+    }
+    &:hover {
+      .i2g-badge-circle {
+        background: var(--primary-color);
+      }
+      &>div {
+        .i2g-button-with-icon {
+          color: var(--primary-color);
+          transition: all ease-in-out 0.2s;
+
+        }
+      }
+    }
+  }
+  
+  &>div>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &>div {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      &>div {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-right: 10px;
+      }
+      &>svg {
+        min-width: 20px;
+      }
+    }
+    &>svg {
+      margin-right: 10px;
+      fill: currentColor;
+    }
+   
   }
 }
